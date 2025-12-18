@@ -3,7 +3,15 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  images: { unoptimized: true },
+  basePath: '/labs',
+  assetPrefix: '/labs',
+  images: {
+    path: '/labs/_next/image',
+  },
+  // For Next.js 16.x compatibility
+  experimental: {
+    appDir: true,
+  },
 };
 
 module.exports = nextConfig;
