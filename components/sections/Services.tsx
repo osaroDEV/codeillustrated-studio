@@ -76,13 +76,13 @@ export function Services() {
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold anton-sc mb-16">
           Our Services
         </h2>
-        <p className="text-5xl md:text-6xl lg:text-7xl leading-tight mb-16 font-sans">
+        <p className="text-2xl md:text-3xl lg:text-4xl leading-tight mb-16 font-sans">
           {text.split("").map((char, index) => (
             <span
               key={index}
               className={`transition-all duration-200 ${
                 index < visibleLetters
-                  ? "text-black font-bold opacity-100"
+                  ? "text-black font-medium opacity-100"
                   : "text-gray-300 font-normal opacity-50"
               }`}
             >

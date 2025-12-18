@@ -143,7 +143,7 @@ export function Footer() {
 
         <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © &copy; {new Date().getFullYear()} Code Illustrated Studio. All rights reserved.
+            &copy; {new Date().getFullYear()} Code Illustrated Studio. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
