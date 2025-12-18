@@ -2,6 +2,7 @@
 
 import { Navbar } from '@/components/sections/Navbar';
 import { Hero } from '@/components/sections/Hero';
+import AboutSection from '@/components/sections/AboutSection';
 import { FeaturedWorks } from '@/components/sections/FeaturedWorks';
 import { Services } from '@/components/sections/Services';
 import { Statistics } from '@/components/sections/Statistics';
@@ -34,6 +35,7 @@ export default function Home() {
       <CustomCursor />
       <Navbar />
       <Hero />
+      <AboutSection />
       <FeaturedWorks />
       <Services />
       <Statistics />
