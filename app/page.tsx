@@ -11,6 +11,7 @@ import { Testimonials } from '@/components/sections/Testimonials';
 import { Footer } from '@/components/sections/Footer';
 import { CustomCursor } from '@/components/CustomCursor';
 import { useEffect } from 'react';
+import ValueSection from '@/components/sections/ValueSection';
 
 export default function Home() {
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function Home() {
       <AboutSection />
       <FeaturedWorks />
       <Services />
+      <ValueSection />
       <Statistics />
       <ClientLogos />
       <Testimonials />
