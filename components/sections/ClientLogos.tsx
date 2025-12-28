@@ -37,8 +37,9 @@ export function ClientLogos() {
     <section className="py-24 px-6 lg:px-12 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto mb-16">
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold anton-sc text-center">
-          Trusted by Leading Brands
+          Our Clients
         </h2>
+        <p className='mt-5 w-3/4 mx-auto text-center sm:text-2xl md:text-3xl'>Since 2023, we have partnered with these companies to create positive impact for the future. Will your company name be next here?</p>
       </div>
 
       <div

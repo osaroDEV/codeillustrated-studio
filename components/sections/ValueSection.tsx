@@ -145,13 +145,6 @@ export default function ValueSection() {
             <h2 className="text-2xl md:text-3xl font-light text-gray-800">
               Our pinky promise...
             </h2>
-
-            <button className="flex items-center space-x-3 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition-colors duration-200 group w-fit">
-              <span className="font-medium">Let's partner up!</span>
-              <div className="bg-blue-400 group-hover:bg-blue-500 p-2 rounded-full transition-colors duration-200">
-                <ArrowRight size={20} />
-              </div>
-            </button>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10">
@@ -165,6 +158,12 @@ export default function ValueSection() {
             ))}
           </div>
         </div>
+        <button className="flex items-center space-x-3 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition-colors duration-200 group w-fit mt-10">
+          <span className="font-medium">Let's partner up!</span>
+          <div className="bg-blue-400 group-hover:bg-blue-500 p-2 rounded-full transition-colors duration-200">
+            <ArrowRight size={20} />
+          </div>
+        </button>
       </section>
     </section>
   );
