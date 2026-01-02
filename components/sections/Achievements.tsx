@@ -61,6 +61,12 @@ const StatCard: React.FC<StatCardProps> = ({ number, label, isVisible }) => {
 const AchievementsSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [visibleLetters, setVisibleLetters] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  const text =
+    "We champion the bold ideas and brave steps our partners have taken with us, from startups to enterprises. We're proud of the connections we've made along the way.";
 
   const stats = [
     {
@@ -80,6 +86,31 @@ const AchievementsSection: React.FC = () => {
       label: "Passionate Designers and Management Teams",
     },
   ];
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isVisible && !hasAnimated) {
+      setHasAnimated(true);
+      const letterCount = text.length;
+      const duration = 2000; // 2 seconds
+      const intervalTime = duration / letterCount;
+
+      let currentLetter = 0;
+      const interval = setInterval(() => {
+        currentLetter++;
+        setVisibleLetters(currentLetter);
+        
+        if (currentLetter >= letterCount) {
+          clearInterval(interval);
+        }
+      }, intervalTime);
+
+      return () => clearInterval(interval);
+    }
+  }, [isVisible, hasAnimated, text.length]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -110,15 +141,25 @@ const AchievementsSection: React.FC = () => {
       className="bg-[#1c1c1c] text-white px-6 py-16 md:px-12 md:py-24 lg:px-24 lg:py-32"
     >
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-[#4A9EFF] text-lg md:text-xl font-medium mb-8 md:mb-12">
+        <h2 className="text-[#1E5A6D] text-base md:text-2xl lg:text-3xl font-medium mb-8">
           Our Achievement
         </h2>
 
-        <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight mb-16 md:mb-24 max-w-5xl text-white">
-          We champion the bold ideas and brave steps our partners have taken
-          with us, from startups to enterprises. We're proud of the connections
-          we've made along the way.
-        </h3>
+        <p className="text-2xl md:text-3xl lg:text-4xl leading-tight mb-16 font-sans">
+          {mounted &&
+            text.split("").map((char, index) => (
+              <span
+                key={index}
+                className={`transition-all duration-200 ${
+                  index < visibleLetters
+                    ? "text-black font-medium opacity-100"
+                    : "text-gray-300 font-normal opacity-50"
+                }`}
+              >
+                {char}
+              </span>
+            ))}
+        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 lg:gap-8 xl:gap-12">
           {stats.map((stat, index) => (

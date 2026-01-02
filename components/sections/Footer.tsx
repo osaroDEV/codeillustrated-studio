@@ -22,7 +22,7 @@ export function Footer() {
                 <span>+44 7405 786 279</span>
               </a>
               <a
-                href="mailto:hello@hatypo.studio"
+                href="mailto:admin@codeillustrated.com"
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
                 data-cursor-hover
               >
@@ -50,11 +50,11 @@ export function Footer() {
                   Works
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#careers" className="text-gray-400 hover:text-white transition-colors">
                   Careers
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="#partnership" className="text-gray-400 hover:text-white transition-colors">
                   Partnership
