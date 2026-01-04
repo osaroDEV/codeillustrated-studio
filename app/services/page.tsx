@@ -1,5 +1,6 @@
 "use client";
 
+import { CustomCursor } from "@/components/CustomCursor";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -202,7 +203,7 @@ const ServiceSection = ({
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  // const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -217,21 +218,22 @@ export default function Home() {
       setIsScrolled(window.scrollY > 50);
     };
 
-    const handleMouseMove = (e: MouseEvent) => {
-      setCursorPos({ x: e.clientX, y: e.clientY });
-    };
+    // const handleMouseMove = (e: MouseEvent) => {
+    //   setCursorPos({ x: e.clientX, y: e.clientY });
+    // };
 
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("mousemove", handleMouseMove);
+    // window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("mousemove", handleMouseMove);
+      // window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
   return (
     <main className="bg-black">
+      <CustomCursor />
       <motion.section
         ref={heroRef}
         style={{ opacity: heroOpacity, scale: heroScale }}
@@ -337,7 +339,7 @@ export default function Home() {
         </div>
       </section>
 
-      <motion.div
+      {/* <motion.div
         className="fixed w-4 h-4 bg-white rounded-full pointer-events-none z-50 mix-blend-difference"
         style={{
           left: cursorPos.x - 8,
@@ -349,7 +351,7 @@ export default function Home() {
         transition={{
           duration: 0.3,
         }}
-      />
+      /> */}
     </main>
   );
 }
