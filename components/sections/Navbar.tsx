@@ -73,7 +73,7 @@ export function Navbar() {
 
       {/* ================= MOBILE MENU ================= */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-40  text-black">
+        <div className="md:hidden fixed inset-0 z-40 h-screen text-black">
           {/* Offset for navbar height */}
           <div className="h-20" />
 
