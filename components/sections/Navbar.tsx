@@ -20,15 +20,13 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-sm shadow-sm"
-          : "bg-transparent"
+        isScrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href='/' className="text-2xl font-bold anton-sc">
+          <Link href="/" className="text-2xl font-bold anton-sc">
             Code Illustrated Studio
           </Link>
 
@@ -73,13 +71,13 @@ export function Navbar() {
 
       {/* ================= MOBILE MENU ================= */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-40 h-screen text-black">
+        <div className="md:hidden fixed inset-0 z-40 bg-white">
           {/* Offset for navbar height */}
           <div className="h-20" />
 
-          <div className="flex flex-col justify-between h-[calc(100vh-5rem)] px-8 pb-10 bg-[#ffffff]">
-            {/* Main Links */}
-            <div className="flex flex-col gap-6">
+          <div className="relative flex flex-col justify-between h-[calc(100vh-5rem)] px-8 pb-10 mt-5">
+            {/* Main Links - Right Aligned */}
+            <div className="flex flex-col items-end gap-3 pt-12">
               {[
                 { label: "Works", href: "#works" },
                 { label: "Services", href: "/labs/services" },
@@ -89,10 +87,10 @@ export function Navbar() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-[clamp(2.75rem,7vw,4rem)] font-semibold leading-none tracking-tight hover:opacity-60 transition-all duration-300"
+                  className="text-[clamp(2.5rem,8vw,4.5rem)] font-light leading-none tracking-tight hover:opacity-60 transition-all duration-300 text-right"
                   style={{
-                    animation: "menuFadeUp 0.6s ease forwards",
-                    animationDelay: `${index * 80}ms`,
+                    animation: "menuFadeIn 0.5s ease forwards",
+                    animationDelay: `${index * 100}ms`,
                     opacity: 0,
                   }}
                 >
@@ -102,15 +100,18 @@ export function Navbar() {
             </div>
 
             {/* Bottom CTA */}
-            <div className="flex flex-col gap-6">
-              <div className="h-px bg-white/20" />
-
+            <div className="flex flex-col items-end gap-6">
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-between w-full text-lg font-medium tracking-tight"
+                className="flex items-center justify-between w-3/4 text-lg border p-3 rounded-full font-normal tracking-tight group"
+                style={{
+                  animation: "menuFadeIn 0.5s ease forwards",
+                  animationDelay: "400ms",
+                  opacity: 0,
+                }}
               >
-                <span className="text-[#C42125]">Start a Project</span>
-                <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1E5A6D]">
+                <span className="text-black">Start a Project</span>
+                <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#4FC3F7] group-hover:bg-[#29B6F6] transition-colors">
                   <ArrowRight className="w-5 h-5 text-white" />
                 </span>
               </button>
@@ -119,14 +120,14 @@ export function Navbar() {
 
           {/* Animation */}
           <style jsx>{`
-            @keyframes menuFadeUp {
+            @keyframes menuFadeIn {
               from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateX(30px);
               }
               to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(0);
               }
             }
           `}</style>
