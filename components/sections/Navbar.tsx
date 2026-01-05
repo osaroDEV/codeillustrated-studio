@@ -75,7 +75,7 @@ export function Navbar() {
           {/* Offset for navbar height */}
           <div className="h-20" />
 
-          <div className="relative flex flex-col justify-between h-[calc(100vh-5rem)] px-8 pb-10 mt-5">
+          <div className="relative flex flex-col h-[calc(100vh-5rem)] px-8 pb-10 mt-5">
             {/* Main Links - Right Aligned */}
             <div className="flex flex-col items-end gap-3 pt-12">
               {[
@@ -100,7 +100,7 @@ export function Navbar() {
             </div>
 
             {/* Bottom CTA */}
-            <div className="flex flex-col items-end gap-6">
+            <div className="mt-20 flex flex-col items-end gap-6">
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center justify-between w-3/4 text-lg border p-3 rounded-full font-normal tracking-tight group"
