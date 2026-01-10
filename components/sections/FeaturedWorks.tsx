@@ -1,29 +1,34 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 const projects = [
   {
-    title: 'Michael Stevens Solicitors',
-    category: 'Legal - UI/UX & Web Development',
-    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+    title: "Michael Stevens Solicitors",
+    category: "Legal - UI/UX & Web Development",
+    image:
+      "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    title: 'Coding Tutor',
-    category: 'EdTech',
-    image: 'https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=800',
+    title: "Coding Tutor",
+    category: "EdTech",
+    image:
+      "https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    title: 'Dabs Construction',
-    category: 'Civil Engineering',
-    image: 'https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=800',
+    title: "Dabs Construction",
+    category: "Civil Engineering",
+    image:
+      "https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    title: 'Ritzy Healthcare',
-    category: 'Healthcare Tech',
-    image: 'https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800',
+    title: "Ritzy Healthcare",
+    category: "Healthcare Tech",
+    image:
+      "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
-  
 ];
 
 export function FeaturedWorks() {
@@ -49,7 +54,7 @@ export function FeaturedWorks() {
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out"
                 style={{
                   backgroundImage: `url(${project.image})`,
-                  transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)',
+                  transform: hoveredIndex === index ? "scale(1.1)" : "scale(1)",
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -65,11 +70,23 @@ export function FeaturedWorks() {
 
               <div
                 className={`absolute inset-0 bg-black/20 transition-opacity duration-300 ${
-                  hoveredIndex === index ? 'opacity-100' : 'opacity-0'
+                  hoveredIndex === index ? "opacity-100" : "opacity-0"
                 }`}
               />
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 flex justify-center">
+          <Link
+            href="/works"
+            className="group flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-800 transition-all duration-300"
+          >
+            View All Works
+            <span className="bg-white text-black rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
+              <ArrowUpRight size={20} />
+            </span>
+          </Link>
         </div>
       </div>
     </section>

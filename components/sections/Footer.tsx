@@ -1,6 +1,7 @@
-'use client';
+"use client";
 
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone } from "lucide-react";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -8,7 +9,9 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div>
-            <h3 className="text-2xl font-bold anton-sc mb-6">Code Illustrated Studio</h3>
+            <h3 className="text-2xl font-bold anton-sc mb-6">
+              Code Illustrated Studio
+            </h3>
             <p className="text-gray-400 mb-6">
               Crafting Digital Products to impact the Future Today
             </p>
@@ -36,19 +39,28 @@ export function Footer() {
             <h4 className="text-lg font-bold mb-6">Pages</h4>
             <ul className="flex flex-col gap-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Link
+                  href="/"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" className="text-gray-400 hover:text-white transition-colors">
+                <Link
+                  href="/#about"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#works" className="text-gray-400 hover:text-white transition-colors">
+                <Link
+                  href="/works"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Works
-                </a>
+                </Link>
               </li>
               {/* <li>
                 <a href="#careers" className="text-gray-400 hover:text-white transition-colors">
@@ -56,7 +68,10 @@ export function Footer() {
                 </a>
               </li> */}
               <li>
-                <a href="#partnership" className="text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="#partnership"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Partnership
                 </a>
               </li>
@@ -67,22 +82,34 @@ export function Footer() {
             <h4 className="text-lg font-bold mb-6">Services</h4>
             <ul className="flex flex-col gap-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Branding Identity
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   UI/UX Design
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Web Development
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Visual Design
                 </a>
               </li>
@@ -143,13 +170,20 @@ export function Footer() {
 
         <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Code Illustrated Studio. All rights reserved.
+            &copy; {new Date().getFullYear()} Code Illustrated Studio. All
+            rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition-colors text-sm"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition-colors text-sm"
+            >
               Terms & Conditions
             </a>
           </div>

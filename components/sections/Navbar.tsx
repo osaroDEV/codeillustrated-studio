@@ -32,18 +32,18 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a
-              href="#works"
+            <Link
+              href="/works"
               className="text-sm font-medium hover:opacity-60 transition-opacity"
             >
               Works
-            </a>
-            <a
-              href="/labs/services"
+            </Link>
+            <Link
+              href="/services"
               className="text-sm font-medium hover:opacity-60 transition-opacity"
             >
               Services
-            </a>
+            </Link>
             <a
               href="#about"
               className="text-sm font-medium hover:opacity-60 transition-opacity"
@@ -79,11 +79,11 @@ export function Navbar() {
             {/* Main Links - Right Aligned */}
             <div className="flex flex-col items-end gap-3 pt-12">
               {[
-                { label: "Works", href: "#works" },
-                { label: "Services", href: "/labs/services" },
-                { label: "About", href: "#about" },
+                { label: "Works", href: "/works" },
+                { label: "Services", href: "/services" },
+                { label: "About", href: "/#about" },
               ].map((item, index) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -95,7 +95,7 @@ export function Navbar() {
                   }}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
 
