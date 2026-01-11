@@ -1,10 +1,10 @@
 "use client";
 
 import { CustomCursor } from "@/components/CustomCursor";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 const categories = [
   "All",
@@ -65,36 +65,108 @@ const projects = [
   },
 ];
 
+const SplitText = ({
+  children,
+  className = "",
+}: {
+  children: string;
+  className?: string;
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.8 });
+
+  const letters = children.split("");
+
+  return (
+    <span ref={ref} className={`inline-block ${className}`}>
+      {letters.map((letter, i) => (
+        <motion.span
+          key={i}
+          initial={{ y: 100, opacity: 0 }}
+          animate={isInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: i * 0.03,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="inline-block"
+          style={{ whiteSpace: letter === " " ? "pre" : "normal" }}
+        >
+          {letter}
+        </motion.span>
+      ))}
+    </span>
+  );
+};
+
 export default function WorksPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8 && rect.bottom > 0) {
+          section.classList.add("in-view");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const filteredProjects = projects.filter(
     (project) => activeCategory === "All" || project.category === activeCategory
   );
+
+  if (!mounted) {
+    return (
+      <main className="bg-[#0f0f0f] min-h-screen text-white flex items-center justify-center">
+        <div className="text-2xl font-bold anton-sc animate-pulse">
+          Loading...
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="bg-[#0f0f0f] min-h-screen pt-32 pb-20 text-white">
       <CustomCursor />
 
       {/* Hero Section */}
-      <section className="px-6 md:px-12 lg:px-24 mb-20">
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="px-6 md:px-12 lg:px-24 mb-20"
+      >
         <div className="max-w-7xl mx-auto">
-          <motion.h1
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[clamp(3.5rem,12vw,9rem)] font-bold uppercase leading-[0.85] tracking-tighter anton-sc mb-12"
-          >
-            Works
-            <span className="text-gray-600 block text-[0.4em]">Selection</span>
-          </motion.h1>
+          <h1 className="text-[clamp(3.5rem,12vw,9rem)] font-bold uppercase leading-[0.85] tracking-tighter anton-sc mb-12">
+            <SplitText>Works</SplitText>
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-gray-600 block text-[0.4em]"
+            >
+              Selection
+            </motion.span>
+          </h1>
 
           <div className="flex flex-wrap gap-4 mt-8">
             {categories.map((category, index) => (
               <motion.button
                 key={category}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 onClick={() => setActiveCategory(category)}
                 className={`px-6 py-2 rounded-full border text-sm font-medium transition-all duration-300 ${
@@ -108,10 +180,15 @@ export default function WorksPage() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Grid */}
-      <section className="px-6 md:px-12 lg:px-24">
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="px-6 md:px-12 lg:px-24"
+      >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
@@ -157,10 +234,15 @@ export default function WorksPage() {
             ))}
           </AnimatePresence>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="mt-40 px-6 md:px-12 lg:px-24">
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="mt-40 px-6 md:px-12 lg:px-24"
+      >
         <div className="max-w-7xl mx-auto border-t border-white/10 pt-24 pb-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-12">
             <h2 className="text-4xl md:text-6xl font-bold anton-sc text-center md:text-left leading-tight">
@@ -178,7 +260,7 @@ export default function WorksPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
     </main>
   );
 }
