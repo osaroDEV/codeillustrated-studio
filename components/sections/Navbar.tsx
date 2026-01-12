@@ -44,12 +44,12 @@ export function Navbar() {
             >
               Services
             </Link>
-            <a
-              href="#about"
+            <Link
+              href="/about"
               className="text-sm font-medium hover:opacity-60 transition-opacity"
             >
               About
-            </a>
+            </Link>
 
             <button className="flex items-center gap-3 bg-gray-100 hover:bg-gray-200 transition-colors px-6 py-2.5 rounded-full text-base font-medium">
               <span className="text-[#C42125]">Start a Project</span>
@@ -81,7 +81,7 @@ export function Navbar() {
               {[
                 { label: "Works", href: "/works" },
                 { label: "Services", href: "/services" },
-                { label: "About", href: "/#about" },
+                { label: "About", href: "/about" },
               ].map((item, index) => (
                 <Link
                   key={item.label}

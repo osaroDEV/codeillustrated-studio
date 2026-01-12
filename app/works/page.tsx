@@ -100,6 +100,7 @@ const SplitText = ({
 };
 
 export default function WorksPage() {
+  const textRef = useRef<HTMLHeadingElement>(null);
   const [activeCategory, setActiveCategory] = useState("All");
   const [mounted, setMounted] = useState(false);
 
@@ -119,8 +120,40 @@ export default function WorksPage() {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
+    // Text animation logic
+    if (textRef.current) {
+      const text = textRef.current;
+      const content = text.innerText;
+      const words = content.split(" ");
+      text.innerHTML = "";
+
+      words.forEach((word, wordIndex) => {
+        const wordSpan = document.createElement("span");
+        wordSpan.style.display = "inline-block";
+        wordSpan.style.overflow = "hidden";
+        wordSpan.style.marginRight = "0.3em";
+        wordSpan.style.whiteSpace = "nowrap";
+
+        const letters = word.split("");
+        letters.forEach((letter, letterIndex) => {
+          const span = document.createElement("span");
+          span.textContent = letter;
+          span.style.display = "inline-block";
+          span.style.opacity = "0";
+          span.style.transform = "translateY(100%)";
+          span.style.animation = `slideUp 0.8s cubic-bezier(0.62, 0.05, 0.01, 0.99) forwards`;
+          span.style.animationDelay = `${
+            wordIndex * 0.1 + letterIndex * 0.02
+          }s`;
+          wordSpan.appendChild(span);
+        });
+
+        text.appendChild(wordSpan);
+      });
+    }
+
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [mounted]);
 
   const filteredProjects = projects.filter(
     (project) => activeCategory === "All" || project.category === activeCategory
@@ -128,7 +161,7 @@ export default function WorksPage() {
 
   if (!mounted) {
     return (
-      <main className="bg-[#0f0f0f] min-h-screen text-white flex items-center justify-center">
+      <main className="bg-white min-h-screen text-black flex items-center justify-center">
         <div className="text-2xl font-bold anton-sc animate-pulse">
           Loading...
         </div>
@@ -137,7 +170,7 @@ export default function WorksPage() {
   }
 
   return (
-    <main className="bg-[#0f0f0f] min-h-screen pt-32 pb-20 text-white">
+    <main className="bg-black min-h-screen">
       <CustomCursor />
 
       {/* Hero Section */}
@@ -145,20 +178,25 @@ export default function WorksPage() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="px-6 md:px-12 lg:px-24 mb-20"
+        className="min-h-[80vh] flex flex-col justify-center px-6 md:px-12 lg:px-24 bg-white text-black"
       >
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-[clamp(3.5rem,12vw,9rem)] font-bold uppercase leading-[0.85] tracking-tighter anton-sc mb-12">
-            <SplitText>Works</SplitText>
+        <div className="max-w-7xl mx-auto w-full pt-20">
+          <div className="mb-12">
+            <h1
+              ref={textRef}
+              className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold anton-sc leading-[1.1] mb-8"
+            >
+              Works
+            </h1>
             <motion.span
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-gray-600 block text-[0.4em]"
+              className="text-gray-400 block text-2xl md:text-3xl font-medium tracking-tight"
             >
               Selection
             </motion.span>
-          </h1>
+          </div>
 
           <div className="flex flex-wrap gap-4 mt-8">
             {categories.map((category, index) => (
@@ -171,8 +209,8 @@ export default function WorksPage() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-6 py-2 rounded-full border text-sm font-medium transition-all duration-300 ${
                   activeCategory === category
-                    ? "bg-white text-black border-white"
-                    : "bg-transparent text-white border-white/20 hover:border-white"
+                    ? "bg-black text-white border-black"
+                    : "bg-transparent text-black border-black/20 hover:border-black"
                 }`}
               >
                 {category}
@@ -187,7 +225,7 @@ export default function WorksPage() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="px-6 md:px-12 lg:px-24"
+        className="px-6 md:px-12 lg:px-24 py-32 bg-black text-white"
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
           <AnimatePresence mode="popLayout">
@@ -241,7 +279,7 @@ export default function WorksPage() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="mt-40 px-6 md:px-12 lg:px-24"
+        className="py-40 px-6 md:px-12 lg:px-24 bg-black text-white"
       >
         <div className="max-w-7xl mx-auto border-t border-white/10 pt-24 pb-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-12">

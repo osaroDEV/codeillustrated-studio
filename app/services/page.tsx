@@ -55,7 +55,7 @@ const services = [
       "Art Direction",
     ],
     image:
-      "https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/6612711/pexels-photo-6612711.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
 ];
 
@@ -202,9 +202,9 @@ const ServiceSection = ({
 };
 
 export default function Home() {
+  const textRef = useRef<HTMLHeadingElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  // const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-  const heroRef = useRef(null);
+  const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
@@ -223,79 +223,85 @@ export default function Home() {
     // };
 
     window.addEventListener("scroll", handleScroll);
-    // window.addEventListener("mousemove", handleMouseMove);
+
+    // Text animation logic
+    if (textRef.current) {
+      const text = textRef.current;
+      const content = text.innerText;
+      const words = content.split(" ");
+      text.innerHTML = "";
+
+      words.forEach((word, wordIndex) => {
+        const wordSpan = document.createElement("span");
+        wordSpan.style.display = "inline-block";
+        wordSpan.style.overflow = "hidden";
+        wordSpan.style.marginRight = "0.3em";
+        wordSpan.style.whiteSpace = "nowrap";
+
+        const letters = word.split("");
+        letters.forEach((letter, letterIndex) => {
+          const span = document.createElement("span");
+          span.textContent = letter;
+          span.style.display = "inline-block";
+          span.style.opacity = "0";
+          span.style.transform = "translateY(100%)";
+          span.style.animation = `slideUp 0.8s cubic-bezier(0.62, 0.05, 0.01, 0.99) forwards`;
+          span.style.animationDelay = `${
+            wordIndex * 0.1 + letterIndex * 0.02
+          }s`;
+          wordSpan.appendChild(span);
+        });
+
+        text.appendChild(wordSpan);
+      });
+    }
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      // window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
   return (
     <main className="bg-black">
       <CustomCursor />
+      {/* Hero Section */}
       <motion.section
         ref={heroRef}
         style={{ opacity: heroOpacity, scale: heroScale }}
-        className="min-h-screen flex items-center justify-center px-6 md:px-12 bg-white text-black relative overflow-hidden"
+        className="min-h-[80vh] flex flex-col justify-center px-6 md:px-12 lg:px-24 bg-white text-black"
       >
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl" />
-        </div>
-
-        <div className="max-w-6xl w-full text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 0.6, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-20 text-sm md:text-base uppercase tracking-widest mb-8 text-black"
-          >
-            Our Services
-          </motion.div>
-
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none mb-12 uppercase tracking-tight">
-            <SplitText>Creating</SplitText>
-            <br />
-            <SplitText>Digital</SplitText>
-            <br />
-            <SplitText>Excellence</SplitText>
-          </h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto"
-          >
-            We craft exceptional digital experiences through innovative design
-            and development
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.4 }}
-            className="mt-12"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="inline-block"
+        <div className="max-w-7xl mx-auto w-full pt-20">
+          <div className="mb-12">
+            <h1
+              ref={textRef}
+              className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold anton-sc leading-[1.1] mb-8"
             >
-              <svg
-                className="w-6 h-6 text-white/60"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+              Services
+            </h1>
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-gray-400 block text-2xl md:text-3xl font-medium tracking-tight"
+            >
+              Creating Digital Excellence
+            </motion.span>
+          </div>
+
+          <div className="flex flex-wrap gap-4 mt-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.number}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="px-6 py-2 rounded-full border border-black/20 text-sm font-medium hover:border-black transition-colors"
               >
-                <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </motion.div>
-          </motion.div>
+                {service.title}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.section>
 
