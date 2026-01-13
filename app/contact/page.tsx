@@ -2,7 +2,13 @@
 
 import { CustomCursor } from "@/components/CustomCursor";
 import { motion } from "framer-motion";
-import { ArrowRight, Instagram, Linkedin, Twitter } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Instagram,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
 
@@ -39,7 +45,10 @@ export default function ContactPage() {
               <motion.div {...fadeInUp} className="flex flex-col gap-8">
                 <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold anton-sc">
                   Let&apos;s <br />
-                  <span className="text-blue-500 leading-[0.85] -tracking-[0.5rem]">Partner</span> <br />
+                  <span className="text-blue-500 leading-[0.85] tracking-[0.01rem]">
+                    Partner
+                  </span>{" "}
+                  <br />
                   Up!
                 </h1>
               </motion.div>
@@ -197,7 +206,9 @@ export default function ContactPage() {
                         Submit Inquiry
                       </span>
                       <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-blue-600 transition-all transform group-hover:rotate-[-45deg]">
-                        <ArrowRight size={28} />
+                        <span className="bg-white text-black rounded-full p-4 group-hover:rotate-45 transition-transform duration-300">
+                          <ArrowUpRight size={28} />
+                        </span>
                       </div>
                     </button>
                   </div>
