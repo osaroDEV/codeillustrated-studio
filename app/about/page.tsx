@@ -178,7 +178,7 @@ export default function AboutPage() {
               ref={textRef}
               className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold anton-sc leading-[1.1] mb-8"
             >
-              We Are <br /> CI Studio
+              We Are CI Studio
             </h1>
             <motion.span
               initial={{ opacity: 0, x: -20 }}
