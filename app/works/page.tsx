@@ -14,56 +14,7 @@ const categories = [
   "Strategy",
 ];
 
-const projects = [
-  {
-    id: 1,
-    title: "Michael Stevens Solicitors",
-    category: "UI/UX Design",
-    subCategory: "Legal Tech",
-    image:
-      "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  },
-  {
-    id: 2,
-    title: "Coding Tutor",
-    category: "Development",
-    subCategory: "EdTech Platform",
-    image:
-      "https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  },
-  {
-    id: 3,
-    title: "Dabs Construction",
-    category: "Branding",
-    subCategory: "Civil Engineering",
-    image:
-      "https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  },
-  {
-    id: 4,
-    title: "Ritzy Healthcare",
-    category: "Development",
-    subCategory: "Health Systems",
-    image:
-      "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  },
-  {
-    id: 5,
-    title: "Solar Energy Portal",
-    category: "Strategy",
-    subCategory: "Renewable Tech",
-    image:
-      "https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  },
-  {
-    id: 6,
-    title: "Eco-Fashion Brand",
-    category: "Branding",
-    subCategory: "Sustainable Style",
-    image:
-      "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  },
-];
+import { projects } from "@/lib/projects";
 
 const SplitText = ({
   children,
@@ -244,33 +195,35 @@ export default function WorksPage() {
                   index % 2 === 1 ? "md:mt-32" : ""
                 }`}
               >
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-8">
-                  <motion.img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500" />
+                <Link href={`/works/${project.slug}`} className="block h-full">
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-8">
+                    <motion.img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500" />
 
-                  <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black rotate-[-45deg] group-hover:rotate-0 transition-transform duration-500">
-                      <ArrowUpRight size={24} />
+                    <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black rotate-[-45deg] group-hover:rotate-0 transition-transform duration-500">
+                        <ArrowUpRight size={24} />
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-3xl md:text-4xl font-bold anton-sc mb-2 group-hover:text-gray-300 transition-colors">
-                      {project.title}
-                    </h3>
-                    <div className="flex gap-3 text-sm text-gray-400 font-medium">
-                      <span>{project.category}</span>
-                      <span>•</span>
-                      <span>{project.subCategory}</span>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="text-3xl md:text-4xl font-bold anton-sc mb-2 group-hover:text-gray-300 transition-colors">
+                        {project.title}
+                      </h3>
+                      <div className="flex gap-3 text-sm text-gray-400 font-medium">
+                        <span>{project.category}</span>
+                        <span>•</span>
+                        <span>{project.subCategory}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </motion.div>
             ))}
           </AnimatePresence>

@@ -4,32 +4,9 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-const projects = [
-  {
-    title: "Michael Stevens Solicitors",
-    category: "Legal - UI/UX & Web Development",
-    image:
-      "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    title: "Coding Tutor",
-    category: "EdTech",
-    image:
-      "https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    title: "Dabs Construction",
-    category: "Civil Engineering",
-    image:
-      "https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    title: "Ritzy Healthcare",
-    category: "Healthcare Tech",
-    image:
-      "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-];
+import { projects as allProjects } from "@/lib/projects";
+
+const projects = allProjects.slice(0, 4);
 
 export function FeaturedWorks() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -43,9 +20,10 @@ export function FeaturedWorks() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {projects.map((project, index) => (
-            <div
+            <Link
+              href={`/works/${project.slug}`}
               key={index}
-              className="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer"
+              className="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer block"
               data-cursor-hover
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
@@ -64,7 +42,7 @@ export function FeaturedWorks() {
                   {project.title}
                 </h3>
                 <p className="text-sm md:text-base text-gray-300">
-                  {project.category}
+                  {project.category} — {project.subCategory}
                 </p>
               </div>
 
@@ -73,7 +51,7 @@ export function FeaturedWorks() {
                   hoveredIndex === index ? "opacity-100" : "opacity-0"
                 }`}
               />
-            </div>
+            </Link>
           ))}
         </div>
 
