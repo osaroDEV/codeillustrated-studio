@@ -156,7 +156,7 @@ export function Footer() {
                   className="text-gray-400 hover:text-white transition-colors"
                   data-cursor-hover
                 >
-                  Pinterest
+                  X (Twitter)
                 </a>
               </li>
             </ul>
@@ -169,18 +169,18 @@ export function Footer() {
             rights reserved.
           </p>
           <div className="flex gap-6">
-            <a
-              href="#"
+            <Link
+              href="/privacy"
               className="text-gray-400 hover:text-white transition-colors text-sm"
             >
               Privacy Policy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/terms"
               className="text-gray-400 hover:text-white transition-colors text-sm"
             >
               Terms & Conditions
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -68,13 +68,13 @@ export default function ContactPage() {
                     <div className="absolute inset-0 bg-blue-500 rounded-full blur-md opacity-20 group-hover:opacity-40 transition-opacity" />
                     <div className="relative w-24 h-24 rounded-full bg-neutral-100 overflow-hidden border-2 border-white shadow-xl flex items-center justify-center">
                       <span className="text-2xl font-bold anton-sc text-gray-400">
-                        OD
+                        call
                       </span>
                     </div>
                   </div>
                   <div className="flex flex-col">
                     <span className="text-blue-500 font-bold uppercase tracking-widest text-[10px] mb-1">
-                      Account Executive
+                      Director
                     </span>
                     <h3 className="text-2xl font-bold">osaroDEV</h3>
                     <Link
@@ -205,7 +205,7 @@ export default function ContactPage() {
                       <span className="text-2xl font-bold anton-sc uppercase tracking-wide">
                         Submit Inquiry
                       </span>
-                      <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-blue-600 transition-all transform group-hover:rotate-[-45deg]">
+                      <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-blue-600 transition-all transform">
                         <span className="bg-white text-black rounded-full p-4 group-hover:rotate-45 transition-transform duration-300">
                           <ArrowUpRight size={28} />
                         </span>
@@ -242,13 +242,6 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Decorative Brand Text */}
-      <section className="mt-60 overflow-hidden pointer-events-none select-none opacity-[0.05]">
-        <h2 className="text-[30vw] font-bold anton-sc leading-none whitespace-nowrap -translate-x-20 text-blue-500">
-          CIS STUDIO
-        </h2>
       </section>
     </main>
   );
