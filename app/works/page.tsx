@@ -87,7 +87,7 @@ const SplitText = ({
           transition={{
             duration: 0.8,
             delay: i * 0.03,
-            ease: [0.22, 1, 0.36, 1],
+            ease: [0.22, 1, 0.36, 1] as const,
           }}
           className="inline-block"
           style={{ whiteSpace: letter === " " ? "pre" : "normal" }}
@@ -236,7 +236,10 @@ export default function WorksPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 0.6,
+                  ease: [0.22, 1, 0.36, 1] as const,
+                }}
                 className={`group cursor-pointer ${
                   index % 2 === 1 ? "md:mt-32" : ""
                 }`}

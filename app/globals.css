@@ -112,6 +112,7 @@ body {
   font-style: normal;
 }
 
+/* 
 section {
   opacity: 0;
   transform: translateY(30px);
@@ -123,6 +124,7 @@ section.in-view {
   opacity: 1;
   transform: translateY(0);
 }
+*/
 
 .custom-cursor {
   pointer-events: none;

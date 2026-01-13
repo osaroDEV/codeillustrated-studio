@@ -81,7 +81,7 @@ const SplitText = ({
           transition={{
             duration: 0.8,
             delay: i * 0.03,
-            ease: [0.22, 1, 0.36, 1],
+            ease: [0.22, 1, 0.36, 1] as const,
           }}
           className="inline-block"
           style={{ whiteSpace: letter === " " ? "pre" : "normal" }}
@@ -162,7 +162,10 @@ const ServiceSection = ({
                 <motion.div
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: hoveredIndex === i ? 1 : 0 }}
-                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{
+                    duration: 0.3,
+                    ease: [0.22, 1, 0.36, 1] as const,
+                  }}
                   className={`absolute left-0 top-0 h-full w-1 origin-left ${
                     index % 2 === 0 ? "bg-white" : "bg-black"
                   }`}
@@ -186,7 +189,7 @@ const ServiceSection = ({
               alt={service.title}
               className="w-full h-full object-cover"
               whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
             />
             <motion.div
               className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"

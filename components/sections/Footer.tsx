@@ -48,7 +48,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#about"
+                  href="/about"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   About
@@ -62,18 +62,13 @@ export function Footer() {
                   Works
                 </Link>
               </li>
-              {/* <li>
-                <a href="#careers" className="text-gray-400 hover:text-white transition-colors">
-                  Careers
-                </a>
-              </li> */}
               <li>
-                <a
-                  href="#partnership"
+                <Link
+                  href="/contact"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Partnership
-                </a>
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>

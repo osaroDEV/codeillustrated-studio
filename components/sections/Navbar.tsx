@@ -50,13 +50,18 @@ export function Navbar() {
             >
               About
             </Link>
-
-            <button className="flex items-center gap-3 bg-gray-100 hover:bg-gray-200 transition-colors px-6 py-2.5 rounded-full text-base font-medium">
-              <span className="text-[#C42125]">Start a Project</span>
-              <span className="bg-[#1E5A6D] text-white rounded-full p-1">
-                <ArrowRight className="w-5 h-5" />
+            <Link
+              href="/contact"
+              className="group flex items-center justify-between bg-black text-white px-6 py-2.5 rounded-full w-full hover:bg-blue-600 transition-all duration-500 shadow-2xl shadow-black/5 hover:shadow-blue-500/20"
+              data-cursor-hover
+            >
+              <span className="text-sm anton-sc uppercase tracking-wide">
+                Start a Project
               </span>
-            </button>
+              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-blue-600 transition-all transform group-hover:rotate-[-45deg]">
+                <ArrowRight size={20} />
+              </div>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -75,9 +80,9 @@ export function Navbar() {
           {/* Offset for navbar height */}
           <div className="h-20" />
 
-          <div className="relative flex flex-col h-[calc(100vh-5rem)] px-8 pb-10 mt-5">
+          <div className="relative flex flex-col h-[calc(100vh-5rem)] px-8 pb-10 bg-white">
             {/* Main Links - Right Aligned */}
-            <div className="flex flex-col items-end gap-3 pt-12">
+            <div className="flex flex-col items-end gap-3 pt-12 mt-10">
               {[
                 { label: "Works", href: "/works" },
                 { label: "Services", href: "/services" },
@@ -87,7 +92,7 @@ export function Navbar() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-[clamp(2.5rem,8vw,4.5rem)] font-light leading-none tracking-tight hover:opacity-60 transition-all duration-300 text-right"
+                  className="text-[clamp(2.5rem,8vw,4.5rem)] leading-none tracking-tight hover:opacity-60 transition-all duration-300 text-right"
                   style={{
                     animation: "menuFadeIn 0.5s ease forwards",
                     animationDelay: `${index * 100}ms`,
@@ -101,20 +106,24 @@ export function Navbar() {
 
             {/* Bottom CTA */}
             <div className="mt-20 flex flex-col items-end gap-6">
-              <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-between w-3/4 text-lg border p-3 rounded-full font-normal tracking-tight group"
-                style={{
+              <Link
+              href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="group flex items-center justify-between bg-black text-white px-6 py-2.5 rounded-full w-full hover:bg-blue-600 transition-all duration-500 shadow-2xl shadow-black/5 hover:shadow-blue-500/20"
+              style={{
                   animation: "menuFadeIn 0.5s ease forwards",
                   animationDelay: "400ms",
                   opacity: 0,
                 }}
-              >
-                <span className="text-black">Start a Project</span>
-                <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#4FC3F7] group-hover:bg-[#29B6F6] transition-colors">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </span>
-              </button>
+              data-cursor-hover
+            >
+              <span className="text-sm anton-sc uppercase tracking-wide">
+                Start a Project
+              </span>
+              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-blue-600 transition-all transform group-hover:rotate-[-45deg]">
+                <ArrowRight size={20} />
+              </div>
+            </Link>
             </div>
           </div>
 
