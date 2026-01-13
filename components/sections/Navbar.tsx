@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -50,18 +50,15 @@ export function Navbar() {
             >
               About
             </Link>
-            <Link
-              href="/contact"
-              className="group flex items-center justify-between bg-black text-white px-6 py-2.5 rounded-full w-full hover:bg-blue-600 transition-all duration-500 shadow-2xl shadow-black/5 hover:shadow-blue-500/20"
-              data-cursor-hover
-            >
-              <span className="text-sm anton-sc uppercase tracking-wide">
-                Start a Project
-              </span>
-              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-blue-600 transition-all transform group-hover:rotate-[-45deg]">
-                <ArrowRight size={20} />
-              </div>
-            </Link>
+             <Link
+            href="/contact"
+            className="group flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-800 transition-all duration-300"
+          >
+            Start a Project
+            <span className="bg-white text-black rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
+              <ArrowUpRight size={20} />
+            </span>
+          </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -106,7 +103,7 @@ export function Navbar() {
 
             {/* Bottom CTA */}
             <div className="mt-20 flex flex-col items-end gap-6">
-              <Link
+              {/* <Link
               href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="group flex items-center justify-between bg-black text-white px-6 py-2.5 rounded-full w-full hover:bg-blue-600 transition-all duration-500 shadow-2xl shadow-black/5 hover:shadow-blue-500/20"
@@ -123,7 +120,17 @@ export function Navbar() {
               <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-blue-600 transition-all transform group-hover:rotate-[-45deg]">
                 <ArrowRight size={20} />
               </div>
-            </Link>
+            </Link> */}
+            <Link
+            href="/contact"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="group flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-800 transition-all duration-300"
+          >
+            Start a Project
+            <span className="bg-white text-black rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
+              <ArrowUpRight size={20} />
+            </span>
+          </Link>
             </div>
           </div>
 

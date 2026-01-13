@@ -2,7 +2,8 @@
 
 import { CustomCursor } from "@/components/CustomCursor";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Code2, Heart, Lightbulb, Target } from "lucide-react";
+import { ArrowUpRight, Code2, Heart, Lightbulb, Target } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 const SplitText = ({
@@ -71,6 +72,8 @@ const ValueCard = ({
     </motion.div>
   );
 };
+
+const MotionLink = motion(Link);
 
 export default function AboutPage() {
   const textRef = useRef<HTMLHeadingElement>(null);
@@ -173,9 +176,9 @@ export default function AboutPage() {
           <div className="mb-12">
             <h1
               ref={textRef}
-              className="text-6xl md:text-8xl lg:text-9xl font-bold anton-sc leading-[0.9] mb-8"
+              className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold anton-sc leading-[1.1] mb-8"
             >
-              WE ARE <br /> CIS STUDIO
+              We Are <br /> CI Studio
             </h1>
             <motion.span
               initial={{ opacity: 0, x: -20 }}
@@ -183,7 +186,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-gray-400 block text-2xl md:text-3xl font-medium tracking-tight"
             >
-              Crafting Digital Excellence
+              Designing brands that grow.
             </motion.span>
           </div>
         </div>
@@ -269,16 +272,17 @@ export default function AboutPage() {
             </h2>
           </motion.div>
 
-          <motion.button
+          <MotionLink
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            href="/contact"
             className="group relative inline-flex items-center gap-4 bg-white text-black px-12 py-6 rounded-full text-xl font-bold uppercase transition-transform"
           >
             Start a Project
-            <span className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center transition-transform group-hover:rotate-[-45deg]">
-              <ArrowRight size={24} />
+            <span className="bg-black text-white rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
+              <ArrowUpRight size={24} />
             </span>
-          </motion.button>
+          </MotionLink>
         </div>
 
         {/* Background Decorative Element */}

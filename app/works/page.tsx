@@ -194,7 +194,7 @@ export default function WorksPage() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-gray-400 block text-2xl md:text-3xl font-medium tracking-tight"
             >
-              Selection
+              Selected projects. Real results.
             </motion.span>
           </div>
 

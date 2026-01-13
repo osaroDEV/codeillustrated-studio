@@ -1,11 +1,13 @@
 import {
   ArrowRight,
+  ArrowUpRight,
   FileText,
   Infinity,
   LucideIcon,
   MessageCircle,
   Sparkles,
 } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 interface PromiseCardProps {
@@ -130,13 +132,6 @@ export default function ValueSection() {
               </span>
             ))}
         </p>
-
-        {/* <button className="flex items-center gap-3 bg-gray-100 hover:bg-gray-200 transition-colors px-6 py-2.5 md:px-8 md:py-4 rounded-full text-base font-medium">
-          <span className="text-[#C42125]">About Studio</span>
-          <span className="bg-[#1E5A6D] text-white p-2 rounded-full">
-            <ArrowRight className="w-5 h-5" />
-          </span>
-        </button> */}
       </div>
 
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
@@ -158,12 +153,15 @@ export default function ValueSection() {
             ))}
           </div>
         </div>
-        <button className="flex items-center space-x-3 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition-colors duration-200 group w-fit mt-10">
-          <span className="font-medium">Let's partner up!</span>
-          <div className="bg-blue-400 group-hover:bg-blue-500 p-2 rounded-full transition-colors duration-200">
-            <ArrowRight size={20} />
-          </div>
-        </button>
+        <Link
+          href="/contact"
+          className="group w-max flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-800 transition-all duration-300"
+        >
+          Let&apos;s Partner Up!
+          <span className="bg-white text-black rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
+            <ArrowUpRight size={20} />
+          </span>
+        </Link>
       </section>
     </section>
   );

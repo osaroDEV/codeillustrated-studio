@@ -37,9 +37,9 @@ export default function ContactPage() {
             {/* Left Column: Info */}
             <div className="lg:col-span-5 flex flex-col gap-16">
               <motion.div {...fadeInUp} className="flex flex-col gap-8">
-                <h1 className="text-7xl md:text-8xl lg:text-[10rem] font-bold anton-sc uppercase leading-[0.85] tracking-tighter">
+                <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold anton-sc">
                   Let&apos;s <br />
-                  <span className="text-blue-500">Partner</span> <br />
+                  <span className="text-blue-500 leading-[0.85] -tracking-[0.5rem]">Partner</span> <br />
                   Up!
                 </h1>
               </motion.div>

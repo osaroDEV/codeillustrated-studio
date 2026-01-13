@@ -2,7 +2,11 @@
 
 import { CustomCursor } from "@/components/CustomCursor";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+
+const MotionLink = motion(Link);
 
 const services = [
   {
@@ -287,7 +291,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-gray-400 block text-2xl md:text-3xl font-medium tracking-tight"
             >
-              Creating Digital Excellence
+              Creating Digital Excellence.
             </motion.span>
           </div>
 
@@ -334,17 +338,17 @@ export default function Home() {
             Let's create something extraordinary together
           </motion.p>
 
-          <motion.button
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-12 py-4 bg-white text-black text-lg uppercase tracking-wider font-bold rounded-full hover:bg-white/90 transition-colors duration-300"
+          <MotionLink
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            href="/contact"
+            className="group relative inline-flex items-center gap-4 bg-white text-black px-12 py-6 rounded-full text-xl font-bold uppercase transition-transform"
           >
             Contact Us
-          </motion.button>
+            <span className="bg-black text-white rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
+              <ArrowUpRight size={24} />
+            </span>
+          </MotionLink>
         </div>
       </section>
 

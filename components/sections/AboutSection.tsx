@@ -1,4 +1,5 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 export default function AboutSection() {
@@ -47,7 +48,9 @@ export default function AboutSection() {
       className="min-h-screen bg-white px-6 py-20 md:px-12 lg:px-24"
     >
       <div className="max-w-5xl">
-        <h2 className="text-[#1E5A6D] text-base md:text-2xl lg:text-3xl font-medium mb-8">About</h2>
+        <h2 className="text-[#1E5A6D] text-base md:text-2xl lg:text-3xl font-medium mb-8">
+          About
+        </h2>
 
         <p className="text-2xl md:text-3xl lg:text-4xl leading-tight mb-16 font-sans">
           {text.split("").map((char, index) => (
@@ -64,12 +67,15 @@ export default function AboutSection() {
           ))}
         </p>
 
-        <button className="flex items-center gap-3 bg-gray-100 hover:bg-gray-200 transition-colors px-6 py-2.5 md:px-8 md:py-4 rounded-full text-base font-medium">
-          <span className="text-[#C42125]">About Studio</span>
-          <span className="bg-[#1E5A6D] text-white p-2 rounded-full">
-            <ArrowRight className="w-5 h-5" />
+        <Link
+          href="/about"
+          className="group w-max flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-800 transition-all duration-300"
+        >
+          More About Us
+          <span className="bg-white text-black rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
+            <ArrowUpRight size={20} />
           </span>
-        </button>
+        </Link>
       </div>
     </section>
   );
