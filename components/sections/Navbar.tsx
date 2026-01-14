@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -26,8 +26,17 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold anton-sc">
-            Code Illustrated Studio
+          {/* Logo */}
+          <Link
+            href="/"
+            className="flex items-center gap-4 text-2xl font-bold anton-sc group"
+          >
+            <img
+              src="/labs/images/logo.png"
+              alt="CIS Logo"
+              className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+            />
+            <span>Code Illustrated Studio</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -50,15 +59,15 @@ export function Navbar() {
             >
               About
             </Link>
-             <Link
-            href="/contact"
-            className="group flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-800 transition-all duration-300"
-          >
-            Start a Project
-            <span className="bg-white text-black rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
-              <ArrowUpRight size={20} />
-            </span>
-          </Link>
+            <Link
+              href="/contact"
+              className="group flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-800 transition-all duration-300"
+            >
+              Start a Project
+              <span className="bg-white text-black rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
+                <ArrowUpRight size={20} />
+              </span>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -121,16 +130,16 @@ export function Navbar() {
                 <ArrowRight size={20} />
               </div>
             </Link> */}
-            <Link
-            href="/contact"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="group flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-800 transition-all duration-300"
-          >
-            Start a Project
-            <span className="bg-white text-black rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
-              <ArrowUpRight size={20} />
-            </span>
-          </Link>
+              <Link
+                href="/contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="group flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-800 transition-all duration-300"
+              >
+                Start a Project
+                <span className="bg-white text-black rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
+                  <ArrowUpRight size={20} />
+                </span>
+              </Link>
             </div>
           </div>
 

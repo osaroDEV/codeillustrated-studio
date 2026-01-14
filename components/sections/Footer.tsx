@@ -9,9 +9,16 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div>
-            <h3 className="text-2xl font-bold anton-sc mb-6">
-              Code Illustrated Studio
-            </h3>
+            <div className="flex items-center gap-4 mb-6">
+              <img
+                src="/labs/images/logo.png"
+                alt="CIS Logo"
+                className="w-12 h-12 object-contain"
+              />
+              <h3 className="text-2xl font-bold anton-sc">
+                Code Illustrated Studio
+              </h3>
+            </div>
             <p className="text-gray-400 mb-6">
               Crafting Digital Products to impact the Future Today
             </p>
@@ -114,24 +121,6 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-6">Follow Us</h4>
             <ul className="flex flex-col gap-3">
-              {/* <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                  data-cursor-hover
-                >
-                  Dribbble
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                  data-cursor-hover
-                >
-                  Behance
-                </a>
-              </li> */}
               <li>
                 <a
                   href="#"
