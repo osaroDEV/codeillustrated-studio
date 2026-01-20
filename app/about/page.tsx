@@ -210,15 +210,15 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap gap-12">
               <div>
-                <div className="text-5xl font-bold anton-sc mb-2">50+</div>
+                <div className="text-5xl font-bold anton-sc mb-2">10+</div>
                 <div className="text-gray-500 uppercase tracking-widest text-sm">
                   Projects Delivered
                 </div>
               </div>
               <div>
-                <div className="text-5xl font-bold anton-sc mb-2">12+</div>
+                <div className="text-5xl font-bold anton-sc mb-2">10+</div>
                 <div className="text-gray-500 uppercase tracking-widest text-sm">
-                  Design Awards
+                  Team Members
                 </div>
               </div>
             </div>

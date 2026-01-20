@@ -40,8 +40,10 @@ export default function ValueSection() {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  const text =
-    "Together, we make perfect partners. 🤝 We offer worry-free partnerships and deliver your vision into reality with our top- tier creativity. No fluff, just the good stuff.";
+  // const text =
+  //   "Together, we make perfect partners. 🤝 We offer worry-free partnerships and deliver your vision into reality with our top- tier creativity. No fluff, just the good stuff.";
+
+  const text = "Our pinky promise..."
 
   const promises = [
     {
@@ -110,14 +112,14 @@ export default function ValueSection() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen bg-white px-6 py-20 md:px-12 lg:px-24"
+      className="bg-white px-6 py-20 md:px-12 lg:px-24"
     >
       <div className="max-w-5xl">
         <h2 className="text-[#1E5A6D] text-base md:text-2xl lg:text-3xl font-medium mb-8">
           Our Values
         </h2>
 
-        <p className="text-2xl md:text-3xl lg:text-4xl leading-tight mb-16 font-sans">
+        <p className="text-2xl md:text-3xl lg:text-4xl leading-tight mb-4 font-sans">
           {mounted &&
             text.split("").map((char, index) => (
               <span
@@ -135,12 +137,12 @@ export default function ValueSection() {
       </div>
 
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="flex flex-col justify-between h-full space-y-8 lg:space-y-0">
             <h2 className="text-2xl md:text-3xl font-light text-gray-800">
               Our pinky promise...
             </h2>
-          </div>
+          </div> */}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10">
             {promises.map((promise, index) => (
@@ -152,10 +154,10 @@ export default function ValueSection() {
               />
             ))}
           </div>
-        </div>
+        {/* </div> */}
         <Link
           href="/contact"
-          className="group w-max flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-800 transition-all duration-300"
+          className="mt-16 group w-max flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-800 transition-all duration-300"
         >
           Let&apos;s Partner Up!
           <span className="bg-white text-black rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">

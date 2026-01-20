@@ -65,8 +65,8 @@ const AchievementsSection: React.FC = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  const text =
-    "We champion the bold ideas and brave steps our partners have taken with us, from startups to enterprises. We're proud of the connections we've made along the way.";
+  // const text =
+  //   "We champion the bold ideas and brave steps our partners have taken with us, from startups to enterprises. We're proud of the connections we've made along the way.";
 
   const stats = [
     {
@@ -74,7 +74,7 @@ const AchievementsSection: React.FC = () => {
       label: "Successfully completed more than 10+ projects.",
     },
     {
-      number: "99%",
+      number: "97%",
       label: "Client satisfaction rate across all delivered projects",
     },
     {
@@ -91,26 +91,26 @@ const AchievementsSection: React.FC = () => {
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (isVisible && !hasAnimated) {
-      setHasAnimated(true);
-      const letterCount = text.length;
-      const duration = 2000; // 2 seconds
-      const intervalTime = duration / letterCount;
+  // useEffect(() => {
+  //   if (isVisible && !hasAnimated) {
+  //     setHasAnimated(true);
+  //     const letterCount = text.length;
+  //     const duration = 2000; // 2 seconds
+  //     const intervalTime = duration / letterCount;
 
-      let currentLetter = 0;
-      const interval = setInterval(() => {
-        currentLetter++;
-        setVisibleLetters(currentLetter);
+  //     let currentLetter = 0;
+  //     const interval = setInterval(() => {
+  //       currentLetter++;
+  //       setVisibleLetters(currentLetter);
         
-        if (currentLetter >= letterCount) {
-          clearInterval(interval);
-        }
-      }, intervalTime);
+  //       if (currentLetter >= letterCount) {
+  //         clearInterval(interval);
+  //       }
+  //     }, intervalTime);
 
-      return () => clearInterval(interval);
-    }
-  }, [isVisible, hasAnimated, text.length]);
+  //     return () => clearInterval(interval);
+  //   }
+  // }, [isVisible, hasAnimated, text.length]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -142,10 +142,10 @@ const AchievementsSection: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-[#1E5A6D] text-base md:text-2xl lg:text-3xl font-medium mb-8">
-          Our Achievement
+          Our Achievements
         </h2>
 
-        <p className="text-2xl md:text-3xl lg:text-4xl leading-tight mb-16 font-sans">
+        {/* <p className="text-2xl md:text-3xl lg:text-4xl leading-tight mb-16 font-sans">
           {mounted &&
             text.split("").map((char, index) => (
               <span
@@ -159,7 +159,7 @@ const AchievementsSection: React.FC = () => {
                 {char}
               </span>
             ))}
-        </p>
+        </p> */}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 lg:gap-8 xl:gap-12">
           {stats.map((stat, index) => (

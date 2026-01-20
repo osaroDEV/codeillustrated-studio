@@ -45,7 +45,7 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen bg-white px-6 py-20 md:px-12 lg:px-24"
+      className="bg-white px-6 py-20 md:px-12 lg:px-24"
     >
       <div className="max-w-5xl">
         <h2 className="text-[#1E5A6D] text-base md:text-2xl lg:text-3xl font-medium mb-8">
