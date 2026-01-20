@@ -31,7 +31,7 @@ export function FeaturedWorks() {
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out"
                 style={{
-                  backgroundImage: `url(${project.image})`,
+                  backgroundImage: `url(${project.coverImage || project.image})`,
                   transform: hoveredIndex === index ? "scale(1.1)" : "scale(1)",
                 }}
               />

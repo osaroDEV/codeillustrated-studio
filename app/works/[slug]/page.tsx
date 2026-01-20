@@ -77,7 +77,7 @@ export default function ProjectPage() {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${project.image})` }}
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/70" />
         </motion.div>
 
         <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-12 lg:p-24 pb-24">
@@ -137,6 +137,22 @@ export default function ProjectPage() {
                 </h4>
                 <p className="text-lg">{project.title}</p>
               </div>
+              {project.liveUrl && (
+                <div className="pt-4">
+                  <h4 className="text-gray-500 uppercase text-sm tracking-widest mb-4">
+                    Live Project
+                  </h4>
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full font-bold hover:bg-zinc-200 transition-colors group"
+                  >
+                    Visit Site
+                    <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </a>
+                </div>
+              )}
             </div>
           </div>
 
@@ -185,7 +201,7 @@ export default function ProjectPage() {
                   <img
                     src={img}
                     alt={`Gallery image ${index + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1.5s] ease-out"
+                    className="w-full h-full object-contain hover:scale-80 transition-transform duration-[1.5s] ease-out"
                   />
                 </motion.div>
               ))}

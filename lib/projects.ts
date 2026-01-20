@@ -5,12 +5,14 @@ export interface Project {
   category: string;
   subCategory: string;
   image: string;
+  coverImage?: string;
   description: string;
   year: string;
   services: string[];
   challenge: string;
   solution: string;
   gallery?: string[];
+  liveUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -20,20 +22,22 @@ export const projects: Project[] = [
     title: "Michael Stevens Solicitors",
     category: "UI/UX Design",
     subCategory: "Legal Tech",
-    image:
+    image: "/labs/projects/michael-stevens-solicitors/hero.png",
+    coverImage:
       "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200",
     description:
       "A comprehensive digital transformation for a leading legal firm, focusing on trust, clarity, and ease of access to legal resources.",
     year: "2023",
-    services: ["UI/UX Design", "Brand Identity", "Web Development"],
+    services: ["UI/UX Design", "Web Development"],
     challenge:
       "The firm needed a modern digital presence that reflected their prestigious reputation while remaining accessible to new clients in a rapidly evolving legal landscape.",
     solution:
       "We designed a clean, minimalist interface focusing on typography and white space, ensuring that complex legal information is easy to digest. We also implemented a streamlined client onboarding flow.",
     gallery: [
-      "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/labs/projects/michael-stevens-solicitors/laptop-mockup.png",
+      "/labs/projects/michael-stevens-solicitors/mobile-mockup.png",
     ],
+    liveUrl: "https://michaelstevenssolicitors.com",
   },
   {
     id: "2",
@@ -55,6 +59,7 @@ export const projects: Project[] = [
       "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1200",
     ],
+    liveUrl: "https://coding-tutor.app",
   },
   {
     id: "3",
@@ -76,6 +81,7 @@ export const projects: Project[] = [
       "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1200",
     ],
+    liveUrl: "https://dabsconstruction.com",
   },
   {
     id: "4",
@@ -83,7 +89,8 @@ export const projects: Project[] = [
     title: "Ritzy Healthcare",
     category: "Development",
     subCategory: "Health Systems",
-    image:
+    image: "/labs/projects/ritzy-healthcare/hero.png",
+    coverImage:
       "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=1200",
     description:
       "A patient-centric healthcare management system designed to streamline operations and improve patient outcomes.",
@@ -94,9 +101,10 @@ export const projects: Project[] = [
     solution:
       "We consolidated multiple service streams into a single unified dashboard, focusing on reducing the cognitive load for healthcare providers.",
     gallery: [
-      "https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "https://images.pexels.com/photos/1271887/pexels-photo-1271887.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/labs/projects/ritzy-healthcare/laptop-mockup.png",
+      "/labs/projects/ritzy-healthcare/mobile-mockup.png",
     ],
+    liveUrl: "https://r-healthcare.vercel.app/",
   },
   {
     id: "5",
@@ -118,6 +126,7 @@ export const projects: Project[] = [
       "https://images.pexels.com/photos/9875441/pexels-photo-9875441.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "https://images.pexels.com/photos/2800832/pexels-photo-2800832.jpeg?auto=compress&cs=tinysrgb&w=1200",
     ],
+    liveUrl: "https://solar-energy-portal.com",
   },
   {
     id: "6",
@@ -139,5 +148,6 @@ export const projects: Project[] = [
       "https://images.pexels.com/photos/3965548/pexels-photo-3965548.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "https://images.pexels.com/photos/7310207/pexels-photo-7310207.jpeg?auto=compress&cs=tinysrgb&w=1200",
     ],
+    liveUrl: "https://eco-fashion-sustainable.com",
   },
 ];
