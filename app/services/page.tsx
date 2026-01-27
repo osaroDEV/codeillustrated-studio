@@ -115,7 +115,7 @@ const ServiceSection = ({
   const opacity = useTransform(
     scrollYProgress,
     [0, 0.3, 0.7, 1],
-    [0, 1, 1, 0.3]
+    [0, 1, 1, 0.3],
   );
   const y = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [100, 0, 0, -50]);
 
@@ -138,7 +138,7 @@ const ServiceSection = ({
             {service.number}
           </motion.div>
 
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-none uppercase tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-bold anton-sc mb-8 leading-tight uppercase">
             <SplitText>{service.title}</SplitText>
           </h2>
 
@@ -275,7 +275,7 @@ export default function Home() {
       <motion.section
         ref={heroRef}
         style={{ opacity: heroOpacity, scale: heroScale }}
-        className="min-h-[80vh] flex flex-col justify-center px-6 md:px-12 lg:px-24 bg-white text-black"
+        className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 bg-white text-black"
       >
         <div className="max-w-7xl mx-auto w-full pt-20">
           <div className="mb-12">
@@ -323,7 +323,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold leading-none mb-12 uppercase tracking-tight"
+            className="text-6xl md:text-8xl lg:text-9xl font-bold anton-sc leading-none mb-12 uppercase tracking-tighter"
           >
             <SplitText>Ready to Start?</SplitText>
           </motion.h2>
@@ -333,7 +333,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-xl md:text-2xl text-white/70 mb-12"
+            className="text-xl md:text-2xl text-gray-400 mb-12"
           >
             Let's create something extraordinary together
           </motion.p>

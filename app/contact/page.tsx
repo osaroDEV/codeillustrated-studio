@@ -45,7 +45,7 @@ export default function ContactPage() {
               <motion.div {...fadeInUp} className="flex flex-col gap-8">
                 <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold anton-sc">
                   Let&apos;s <br />
-                  <span className="text-blue-500 leading-[0.85] tracking-[0.01rem]">
+                  <span className="leading-[0.85] tracking-[0.01rem]">
                     Partner
                   </span>{" "}
                   <br />
@@ -60,7 +60,7 @@ export default function ContactPage() {
                 className="flex flex-col gap-12"
               >
                 {/* Profile Section */}
-                <motion.div
+                {/* <motion.div
                   variants={fadeInUp}
                   className="flex items-center gap-6 group"
                 >
@@ -73,7 +73,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-blue-500 font-bold uppercase tracking-widest text-[10px] mb-1">
+                    <span className="font-bold uppercase tracking-widest text-[10px] mb-1">
                       Director
                     </span>
                     <h3 className="text-2xl font-bold">osaroDEV</h3>
@@ -85,7 +85,7 @@ export default function ContactPage() {
                       Book a Call <ArrowRight size={12} />
                     </Link>
                   </div>
-                </motion.div>
+                </motion.div> */}
 
                 {/* Contact Links */}
                 <motion.div

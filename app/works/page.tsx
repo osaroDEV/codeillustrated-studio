@@ -129,7 +129,7 @@ export default function WorksPage() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="min-h-[80vh] flex flex-col justify-center px-6 md:px-12 lg:px-24 bg-white text-black"
+        className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 bg-white text-black"
       >
         <div className="max-w-7xl mx-auto w-full pt-20">
           <div className="mb-12">
@@ -213,7 +213,7 @@ export default function WorksPage() {
 
                   <div className="flex justify-between items-start">
                     <div>
-                      <h3 className="text-3xl md:text-4xl font-bold anton-sc mb-2 group-hover:text-gray-300 transition-colors">
+                      <h3 className="text-4xl md:text-6xl font-bold anton-sc mb-8 leading-tight uppercase">
                         {project.title}
                       </h3>
                       <div className="flex gap-3 text-sm text-gray-400 font-medium">

@@ -45,7 +45,8 @@ export const projects: Project[] = [
     title: "Coding Tutor",
     category: "Development",
     subCategory: "EdTech Platform",
-    image:
+    image: "/projects/coding-tutor/hero.png",
+    coverImage:
       "https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=1200",
     description:
       "An interactive learning platform designed to bridge the gap between theory and practice in software engineering.",
@@ -56,10 +57,10 @@ export const projects: Project[] = [
     solution:
       "We built a custom interactive code environment directly in the browser, integrated with a comprehensive progress tracking system and gamified learning paths.",
     gallery: [
-      "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/projects/coding-tutor/laptop-view.png",
+      "/projects/coding-tutor/mobile-view.png",
     ],
-    liveUrl: "https://coding-tutor.app",
+    liveUrl: "https://code-illustrated.vercel.app/",
   },
   {
     id: "3",
