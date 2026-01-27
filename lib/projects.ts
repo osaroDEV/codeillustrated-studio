@@ -45,7 +45,7 @@ export const projects: Project[] = [
     title: "Coding Tutor",
     category: "Development",
     subCategory: "EdTech Platform",
-    image: "/projects/coding-tutor/hero.png",
+    image: "/labs/projects/coding-tutor/hero.png",
     coverImage:
       "https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=1200",
     description:
@@ -57,8 +57,8 @@ export const projects: Project[] = [
     solution:
       "We built a custom interactive code environment directly in the browser, integrated with a comprehensive progress tracking system and gamified learning paths.",
     gallery: [
-      "/projects/coding-tutor/laptop-view.png",
-      "/projects/coding-tutor/mobile-view.png",
+      "/labs/projects/coding-tutor/laptop-mockup.png",
+      "/labs/projects/coding-tutor/mobile-mockup.png",
     ],
     liveUrl: "https://code-illustrated.vercel.app/",
   },
@@ -150,5 +150,27 @@ export const projects: Project[] = [
       "https://images.pexels.com/photos/7310207/pexels-photo-7310207.jpeg?auto=compress&cs=tinysrgb&w=1200",
     ],
     liveUrl: "https://eco-fashion-sustainable.com",
+  },
+  {
+    id: "7",
+    slug: "portfolio",
+    title: "Personal Portfolio",
+    category: "Development",
+    subCategory: "Personal Branding",
+    image: "/labs/projects/portfolio/hero.png",
+    coverImage: "/labs/projects/portfolio/hero.png",
+    description:
+      "A modern, high-performance portfolio website showcasing creative development work with fluid animations and a premium dark aesthetic.",
+    year: "2024",
+    services: ["Web Development", "UI/UX Design", "Motion Graphics"],
+    challenge:
+      "Creating a personal brand identity that stands out in a crowded market while maintaining high performance and accessibility.",
+    solution:
+      "Built with Next.js and Framer Motion, the site features smooth page transitions, custom cursor interactions, and a fully responsive design that perfectly balances aesthetics and functionality.",
+    gallery: [
+      "/labs/projects/portfolio/laptop-mockup.png",
+      "/labs/projects/portfolio/mobile-mockup.png",
+    ],
+    liveUrl: "https://osarodev.com/",
   },
 ];
