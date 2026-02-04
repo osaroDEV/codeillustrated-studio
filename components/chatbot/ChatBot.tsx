@@ -51,7 +51,7 @@ const RESPONSES: Record<string, Partial<Message>> = {
   "How much do projects cost?": {
     text: "Project pricing varies based on complexity and scope. Small projects typically start from $500, while complex enterprise solutions are quoted individually. Would you like a custom quote?",
     links: [
-      { label: "Request a Quote", url: "labs/contact", icon: ArrowUpRight },
+      { label: "Request a Quote", url: "/labs/contact", icon: ArrowUpRight },
       {
         label: "Chat on WhatsApp",
         url: "https://wa.me/447405786279",
@@ -62,12 +62,14 @@ const RESPONSES: Record<string, Partial<Message>> = {
   },
   "Can I see your previous work?": {
     text: "Absolutely! You can check out our portfolio of featured works on our website.",
-    links: [{ label: "View Works", url: "labs/works", icon: ArrowUpRight }],
+    links: [{ label: "View Works", url: "/labs/works", icon: ArrowUpRight }],
     options: ["Back to main menu"],
   },
   "How do I get started?": {
     text: "The best way to start is by booking a consultation or sending us your project brief. We'll get back to you within 24 hours.",
-    links: [{ label: "Start a Project", url: "labs/contact", icon: ArrowUpRight }],
+    links: [
+      { label: "Start a Project", url: "/labs/contact", icon: ArrowUpRight },
+    ],
     options: ["Back to main menu"],
   },
   "Contact us directly": {
@@ -85,7 +87,9 @@ const RESPONSES: Record<string, Partial<Message>> = {
   "Back to main menu": INITIAL_MESSAGE,
   "Show me more services": {
     text: "You can find a detailed breakdown of all our services including UI/UX Design & Visual Design on our services page.",
-    links: [{ label: "Our Services", url: "labs/services", icon: ArrowUpRight }],
+    links: [
+      { label: "Our Services", url: "/labs/services", icon: ArrowUpRight },
+    ],
     options: ["Back to main menu"],
   },
 };
