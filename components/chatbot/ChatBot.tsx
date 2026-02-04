@@ -51,7 +51,7 @@ const RESPONSES: Record<string, Partial<Message>> = {
   "How much do projects cost?": {
     text: "Project pricing varies based on complexity and scope. Small projects typically start from $500, while complex enterprise solutions are quoted individually. Would you like a custom quote?",
     links: [
-      { label: "Request a Quote", url: "labs/contact", icon: ArrowUpRight },
+      { label: "Request a Quote", url: "/contact", icon: ArrowUpRight },
       {
         label: "Chat on WhatsApp",
         url: "https://wa.me/447405786279",
@@ -67,7 +67,7 @@ const RESPONSES: Record<string, Partial<Message>> = {
   },
   "How do I get started?": {
     text: "The best way to start is by booking a consultation or sending us your project brief. We'll get back to you within 24 hours.",
-    links: [{ label: "Start a Project", url: "labs/contact", icon: ArrowUpRight }],
+    links: [{ label: "Start a Project", url: "/contact", icon: ArrowUpRight }],
     options: ["Back to main menu"],
   },
   "Contact us directly": {
