@@ -1,3 +1,4 @@
+import { ChatBot } from "@/components/chatbot/ChatBot";
 import { Footer } from "@/components/sections/Footer";
 import { Navbar } from "@/components/sections/Navbar";
 import type { Metadata } from "next";
@@ -49,6 +50,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <ChatBot />
       </body>
     </html>
   );
