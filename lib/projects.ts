@@ -105,7 +105,7 @@ export const projects: Project[] = [
       "/labs/projects/ritzy-healthcare/laptop-mockup.png",
       "/labs/projects/ritzy-healthcare/mobile-mockup.png",
     ],
-    liveUrl: "https://r-healthcare.vercel.app/",
+    liveUrl: "https://ritzyhealthcare.co.uk/",
   },
   {
     id: "5",
