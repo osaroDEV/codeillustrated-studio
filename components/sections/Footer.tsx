@@ -11,7 +11,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-4 mb-6">
               <img
-                src="/labs/images/logo.png"
+                src="/images/logo.png"
                 alt="CIS Logo"
                 className="w-12 h-12 object-contain"
               />

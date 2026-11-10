@@ -22,7 +22,7 @@ export const projects: Project[] = [
     title: "Michael Stevens Solicitors",
     category: "UI/UX Design",
     subCategory: "Legal Tech",
-    image: "/labs/projects/michael-stevens-solicitors/hero.png",
+    image: "/projects/michael-stevens-solicitors/hero.png",
     coverImage:
       "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200",
     description:
@@ -34,8 +34,8 @@ export const projects: Project[] = [
     solution:
       "We designed a clean, minimalist interface focusing on typography and white space, ensuring that complex legal information is easy to digest. We also implemented a streamlined client onboarding flow.",
     gallery: [
-      "/labs/projects/michael-stevens-solicitors/laptop-mockup.png",
-      "/labs/projects/michael-stevens-solicitors/mobile-mockup.png",
+      "/projects/michael-stevens-solicitors/laptop-mockup.png",
+      "/projects/michael-stevens-solicitors/mobile-mockup.png",
     ],
     liveUrl: "https://michaelstevenssolicitors.com",
   },
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     title: "Coding Tutor",
     category: "Development",
     subCategory: "EdTech Platform",
-    image: "/labs/projects/coding-tutor/hero.png",
+    image: "/projects/coding-tutor/hero.png",
     coverImage:
       "https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=1200",
     description:
@@ -57,8 +57,8 @@ export const projects: Project[] = [
     solution:
       "We built a custom interactive code environment directly in the browser, integrated with a comprehensive progress tracking system and gamified learning paths.",
     gallery: [
-      "/labs/projects/coding-tutor/laptop-mockup.png",
-      "/labs/projects/coding-tutor/mobile-mockup.png",
+      "/projects/coding-tutor/laptop-mockup.png",
+      "/projects/coding-tutor/mobile-mockup.png",
     ],
     liveUrl: "https://code-illustrated.vercel.app/",
   },
@@ -90,7 +90,7 @@ export const projects: Project[] = [
     title: "Ritzy Healthcare",
     category: "Development",
     subCategory: "Health Systems",
-    image: "/labs/projects/ritzy-healthcare/hero.png",
+    image: "/projects/ritzy-healthcare/hero.png",
     coverImage:
       "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=1200",
     description:
@@ -102,8 +102,8 @@ export const projects: Project[] = [
     solution:
       "We consolidated multiple service streams into a single unified dashboard, focusing on reducing the cognitive load for healthcare providers.",
     gallery: [
-      "/labs/projects/ritzy-healthcare/laptop-mockup.png",
-      "/labs/projects/ritzy-healthcare/mobile-mockup.png",
+      "/projects/ritzy-healthcare/laptop-mockup.png",
+      "/projects/ritzy-healthcare/mobile-mockup.png",
     ],
     liveUrl: "https://ritzyhealthcare.co.uk/",
   },
@@ -157,8 +157,8 @@ export const projects: Project[] = [
     title: "Personal Portfolio",
     category: "Development",
     subCategory: "Personal Branding",
-    image: "/labs/projects/portfolio/hero.png",
-    coverImage: "/labs/projects/portfolio/hero.png",
+    image: "/projects/portfolio/hero.png",
+    coverImage: "/projects/portfolio/hero.png",
     description:
       "A modern, high-performance portfolio website showcasing creative development work with fluid animations and a premium dark aesthetic.",
     year: "2024",
@@ -168,8 +168,8 @@ export const projects: Project[] = [
     solution:
       "Built with Next.js and Framer Motion, the site features smooth page transitions, custom cursor interactions, and a fully responsive design that perfectly balances aesthetics and functionality.",
     gallery: [
-      "/labs/projects/portfolio/laptop-mockup.png",
-      "/labs/projects/portfolio/mobile-mockup.png",
+      "/projects/portfolio/laptop-mockup.png",
+      "/projects/portfolio/mobile-mockup.png",
     ],
     liveUrl: "https://osarodev.com/",
   },

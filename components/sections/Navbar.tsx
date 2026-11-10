@@ -32,7 +32,7 @@ export function Navbar() {
             className="flex items-center gap-4 text-2xl font-bold anton-sc group"
           >
             <img
-              src="/labs/images/logo.png"
+              src="/images/logo.png"
               alt="CIS Logo"
               className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
             />
